@@ -1,4 +1,22 @@
-Flask = 1.1.2
-Flask_Restful = 0.3.8
-gunicorn = 19.9.8
-python = 3.8
+[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[dev-packages]
+
+
+
+[packages]
+
+flask = "*"
+flask-sqlalchemy = "*"
+"psycopg2" = "*"
+gunicorn = "*"
+
+
+[requires]
+
+python_version = "3.6"
