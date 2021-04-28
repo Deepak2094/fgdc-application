@@ -1,1 +1,1 @@
-gunicorn app:fgdc-meta-data --preload
+web: gunicorn app:app
