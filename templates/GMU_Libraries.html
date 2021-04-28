@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='FGDC_Style_Style.css') }}">
+<head>
+    <meta charset="UTF-8">
+    <title>FGDC Meta Data Automation</title>
+</head>
+<body>
+<img src="../static/disc.png" alt="Trulli" width="675" height="120">
+ <h4> Contact Information <br>
+            Name : Joy Suh <br>
+            2703 Fenwick Library <br>
+            Digital Scholarship Center <br>
+            4400 University Dr <br>
+            Fairfax, VA 22030 <br>
+            Email : hsuh1@gmu.edu</h4>
+    <h1> Welcome to the FGDC Meta Data Update Application</h1>
+     <p> Please enter the details below and press the Update Files button <br>
+     The XML files in the location specified will get updated with the specified values</p>
+
+     <!--<input type="file" webkitdirectory directory multiple/>-->
+
+     <form action="{{ url_for('FGDC_data')}}"method="post">
+         <input type="file" id="myFile" name="filename">
+        <label for="Folder_Path"> Select Folder Path:</label><br>
+                <input type="text" id="Folder_Path" name="Folder_Path" placeholder=" Specify the folder path where the
+                files are stored"><br>
+         <fieldset>
+             <legend> Tab 1 - Identification Info</legend>
+             <label for="county_city">County/City:</label><br>
+                <input type="text" id="county_city" name="county_city" placeholder="Specify the County or City"
+                       size="500" maxlength="300" ><br>
+             <label for="StateAbb">State Abbreviation:</label><br>
+                <input type="text" id="StateAbb" name="StateAbb" placeholder="Two letter abbreviation"><br>
+             <label for="StateFF">State Full Form:</label><br>
+                <input type="text" id="StateFF" name="StateFF" placeholder="State Full Form"><br>
+             <label for="Year">Year:</label><br>
+                <input type="text" id="Year" name="Year" placeholder="Year in which the Meta Data was
+                created/Updated"><br>
+             <label for="CD_Obtained_Date">When was the CD Obtained ?</label><br>
+                <input type="text" id="CD_Obtained_Date" name="CD_Obtained_Date" placeholder="CD Obtained"><br>
+
+             <label for="ID_Originator"> Originator :</label><br>
+                <input type="text" id="ID_Originator" name="ID_Originator" placeholder="Organisation/Person responsible
+                 for creating dataset"><br>
+             <label for="ID_accconst"> Data Access Constraints:</label><br>
+                <input type="text" id="ID_accconst" name = "ID_accconst" value = "None, Please see 'Distribution Info'
+                for details"><br>
+             <label for="ID_useconst"> Data Use Constraint :</label><br>
+                <input type="text" id="ID_useconst" name="ID_useconst" value="None. Users are advised to read the data
+                set's metadata thoroughly to understand appropriate use and data limitations."><br>
+             <label for="ID_abstract"> Abstarct </label><br>
+                <input type="text" id="ID_abstract" name="ID_abstract" value="This dataset represents the file
+                name in"><br>
+            <label for="ID_purpose"> Purpose </label><br>
+                <input type="text" id="ID_purpose" name="ID_purpose" value="This dataset is intended for researchers,
+                students, and policy makers for reference and mapping purposes,and may be used for basic applications
+                such as viewing, querying, and map output production, or to provide a base map to support graphical
+                overlays and analysis with other spatial data"><br>
+
+
+             <label for="ID_cntorg"> Contact Organization</label><br>
+                <input type="text" id="ID_cntorg" name="ID_cntorg" placeholder=" Contact organization"><br>
+             <label for="ID_cntper">Contact Person:</label><br>
+                <input type="text" id="ID_cntper" name="ID_cntper" placeholder="Contact Person"><br>
+             <label for="ID_cntpos">Contact Position:</label><br>
+                <input type="text" id="ID_cntpos" name="ID_cntpos" placeholder= "Contact Position"><br>
+             <label for="ID_cntvoice">Contact Voice:</label><br>
+                <input type="text" id="ID_cntvoice" name="ID_cntvoice" placeholder="Contact"><br>
+             <label for="ID_cntemail">Contact Email:</label><br>
+                <input type="text" id="ID_cntemail" name="ID_cntemail" placeholder="Contact Email"><br>
+             <label for="ID_addrtype"> AddressType </label><br>
+                <input type="text" id="ID_addrtype" name="ID_addrtype" placeholder="Address type"><br>
+             <label for="ID_address"> Address </label><br>
+                <input type="text" id="ID_address" name="ID_address" placeholder="Address"><br>
+             <label for="ID_city"> City </label><br>
+                <input type="text" id="ID_city" name="ID_city" placeholder="City"><br>
+             <label for="ID_state"> State </label><br>
+                <input type="text" id="ID_state" name="ID_state" placeholder="State"><br>
+             <label for="ID_postal"> Postal </label><br>
+                <input type="text" id="ID_postal" name="ID_postal" placeholder="postal"><br>
+
+        </fieldset>
+
+         <fieldset>
+             <legend> Tab 2  - Data Quality </legend>
+             <label for="DQ_attraccr"> Attribute Accuarcy Report :</label><br>
+                <input type="text" id="DQ_attraccr" name="DQ_attraccr" value="No formal attribute accuracy tests
+                were conducted."><br>
+             <label for="DQ_logic"> Logical Consistency Report:</label><br>
+                <input type="text" id="DQ_logic" name = "DQ_logic" value = "No formal logical accuracy tests
+                were conducted"><br>
+             <label for="DQ_complete"> Completeness Report:</label><br>
+                <input type="text" id="DQ_complete" name="DQ_complete" value="Data set is considered complete for the
+                information presented, as described in the abstract. Users are advised to read the rest of the metadata
+                record carefully for additional details"><br>
+             <label for="DQ_horizpar"> Horizontal Accuracy Report:</label><br>
+                <input type="text" id="DQ_horizpar" name="DQ_horizpar" value="A formal accuracy assessment of the
+                horizontal positional information in the data set has either not been conducted, or is not
+                applicable."><br>
+             <label for="DQ_vertaccr"> Vertical Accuracy Report:</label><br>
+                <input type="text" id="DQ_vertaccr" name="DQ_vertaccr" value="A formal accuracy assessment of the
+                vertical positional information in the data set has either not been conducted, or is not
+                applicable"><br>
+             <label for="DQ_procdate">Proccess Date</label><br>
+                <input type="text" id="DQ_procdate" name="DQ_procdate" value = "Unknown"><br>
+         </fieldset>
+
+
+         <fieldset>
+             <legend> Tab 5  - Distribution Info</legend>
+             <label for="DI_distliab"> Distribution Liability:</label><br>
+                <input type="text" id="DI_distliab" name="DI_distliab" value="Distributor assumes no liability for
+                misuse of data."><br>
+             <label for="DI_fees"> Distribution Fess:</label><br>
+                <input type="text" id="DI_fees" name = "DI_fees" value ="None. No fees are applicable for obtaining the
+                data set "><br>
+          </fieldset>
+
+         <fieldset>
+             <legend> Tab 6 - Meta Data Info</legend>
+             <label for="MI_cntorg"> Contact Organization</label><br>
+                <input type="text" id="MI_cntorg" name="MI_cntorg" value= "George Mason University Libraries"><br>
+             <label for="MI_cntper">Contact Person:</label><br>
+                <input type="text" id="MI_cntper" name="MI_cntper" value="Digital Scholarship Center"><br>
+             <label for="MI_cntvoice">Contact Voice:</label><br>
+                <input type="text" id="MI_cntvoice" name="MI_cntvoice" value="703-993-2240"><br>
+             <label for="MI_cntemail">Contact Email:</label><br>
+                <input type="text" id="MI_cntemail" name="MI_cntemail" value="datahelp@gmu.edu"><br>
+             <label for="MI_addrtype"> AddressType </label><br>
+                <input type="text" id="MI_addrtype" name="MI_addrtype" value="mailing and physical"><br>
+             <label for="MI_address"> Address </label><br>
+                <input type="text" id="MI_address" name="MI_address" value="4400 University Drive"><br>
+             <label for="MI_city"> City </label><br>
+                <input type="text" id="MI_city" name="MI_city" value="Fairfax"><br>
+             <label for="MI_state"> State </label><br>
+                <input type="text" id="MI_state" name="MI_state" value="VA"><br>
+             <label for="MI_postal"> Postal </label><br>
+                <input type="text" id="MI_postal" name="MI_postal" value="22030"><br>
+             <label for="MI_metstdn"> Meta Standard Name </label><br>
+                <input type="text" id="MI_metstdn" name="MI_metstdn" value = "FGDC Content Standards for Digital
+                Geospatial Metadata"><br>
+             <label for="MI_metstdv"> Metadata Standard Version </label><br>
+                <input type="text" id="MI_metstdv" name="MI_metstdv" value = "FGDC-STD-001-1998"><br>
+         </fieldset>
+         <input type="submit" value="Update All Files">
+
+
+     </form>
+
+</body>
+</html>
+
+</body>
+</html>
