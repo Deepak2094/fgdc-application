@@ -8,7 +8,7 @@ import os
 
 def FGDC_Meta_Data_Automation(data):
     # Input and Output Path Declaration
-    directoryPath = data['Folder_Path']
+    directoryPath = "./FGDC_Folder/"
     folderList = []
     fileList = []
     OutputFileList = []
