@@ -1,1 +1,1 @@
-web: gunicorn gettingstarted.wsgi
+gunicorn app:fgdc-meta-data --preload
